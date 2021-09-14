@@ -6,10 +6,12 @@ const Temp=()=>{
     useEffect(()=>{
         const fetchApi=async()=>{
              const url=`http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=58d83c4b725408b7e32a75fde8f023f6`;
-             const response=await fetch(url);
-              const resJson=await response.json();
-              console.log(resJson)
-              setCity(resJson.main);
+
+                const response=await fetch(url);
+                const resJson=await response.json();
+                console.log(resJson)
+                setCity(resJson.main);
+        
         }
          fetchApi();
     },[search])
